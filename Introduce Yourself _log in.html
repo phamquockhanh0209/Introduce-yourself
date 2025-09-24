@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduce yourself log in</title>
+    <link rel="stylesheet" href="index_log_in.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="name">Phạm Quốc Khánh</div>
+                <ul class="nav-links">
+                    <li><a href="http://127.0.0.1:5500/Introduce%20Yourself_Home.html#" class="nav-link">Trang Chủ</a></li>
+                    <li><a href="http://127.0.0.1:5500/Introduce%20Yourself_discover%20and%20skill.html" class="nav-link">Khám Phá</a></li>
+                    <li><a href="#" class="nav-link active">Đăng Ký</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Registration Page -->
+    <main id="register" class="page">
+        <div class="form-container">
+            <h2>📝 Đăng Ký Thông Tin</h2>
+            <form id="registrationForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="fullName">Họ và Tên *</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Nhập họ và tên đầy đủ">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" placeholder="0901234567">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Ngày sinh</label>
+                    <input type="date" id="birthDate" name="birthDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Giới tính</label>
+                    <select id="gender" name="gender">
+                        <option value="">Chọn giới tính</option>
+                        <option value="male">Nam</option>
+                        <option value="female">Nữ</option>
+                        <option value="other">Khác</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="occupation">Nghề nghiệp</label>
+                    <select id="occupation" name="occupation">
+                        <option value="">Chọn nghề nghiệp</option>
+                        <option value="student">Sinh viên</option>
+                        <option value="developer">Lập trình viên</option>
+                        <option value="designer">Thiết kế</option>
+                        <option value="teacher">Giáo viên</option>
+                        <option value="other">Khác</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="interests">Sở thích quan tâm</label>
+                    <textarea id="interests" name="interests" rows="3"
+                        placeholder="Chia sẻ về sở thích và những điều bạn quan tâm..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Lời nhắn</label>
+                    <textarea id="message" name="message" rows="4"
+                        placeholder="Để lại lời nhắn hoặc câu hỏi cho tôi..."></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Đăng ký nhận thông tin cập nhật mới</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Tôi đồng ý với các điều khoản và điều kiện *</label>
+                </div>
+
+                <button type="submit" class="btn btn-center">
+                    🚀 Gửi thông tin
+                </button>
+
+                <div id="successMessage" class="success-message">
+                    ✅ Cảm ơn bạn đã đăng ký! Thông tin đã được gửi thành công.
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
