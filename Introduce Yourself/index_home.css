@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:  'Times New Roman', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh;
+}
+
+.navbar {
+    position: fixed;
+    /* Thanh điều hướng luôn theo khi kéo xuống*/
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(46, 0, 36);
+    /* độ trong suốt 0.95*/
+    z-index: 1000;
+    /* nằm trên cùng để kéo thanh navbar k bị che */
+    transition: all 0.3s ease;
+    /* chuyển động mượt */
+}
+
+.navbar .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-content {
+    display: flex;
+    /* phần tử cha và cho các con của nó xếp thành hàng ngang */
+    justify-content: space-between;
+    /* phần tử con được căn chỉnh và phân bổ khoảng cách theo trục ngang. */
+    flex-direction: column;
+    align-items: center;
+    /* căn chỉnh theo trục dọc. */
+    padding: 15px 0;
+}
+
+
+@media (min-width: 800px) {
+    .nav-content {
+        flex-direction: row;
+        /* nhỏ hơn 700px thì ảnh nhảy lên trên */
+    }
+}
+
+.name {
+    font-size: 2.5em;
+    font-weight: bold;
+    /* background: linear-gradient(135deg, #FFD700, #A9A9A9); */
+    /* -webkit-text-fill-color: transparent; */
+    /* cho văn bản thành màu trong suốt rồi cho nó hiện ra màu background */
+    color: aliceblue;
+    background-clip: text;
+    /* cắt nền (background) theo hình dạng của chữ. */
+    font-family: 'Times New Roman', sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    /* bỏ dấu chấm đầu*/
+    gap: 30px;
+}
+
+.nav-link.active {
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    white-space: nowrap;
+    /* giữ nguyên 1 dòng */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000000;
+    background: rgb(238, 236, 236);
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+    /* giữ nguyên 1 dòng */
+}
+
+.nav-link:hover {
+    color: #f7f317;
+    background: rgb(255, 255, 255);
+}
+
+
+/* Main Content */
+.main-content {
+    padding-top: 80px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main-content .container {
+    width: 100%;
+    background: white;
+    min-height: calc(100vh - 80px);
+}
+
+/* Page Active */
+.page_active {
+    width: 100%;
+}
+
+/* Welcome Title */
+.welcome {
+    text-align: center;
+    font-size: 3em;
+    color: #2c3e50;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa toàn bộ nội dung theo chiều ngang */
+    align-items: center;
+    /* Căn giữa các phần tử con theo chiều ngang */
+    flex-direction: column;
+    /* ảnh và chữ nằm ngang */
+    gap: 50px;
+    padding: 80px 0;
+    /* Sử dụng một giá trị padding hợp lý */
+    background: white;
+    text-align: justify;
+}
+
+@media (min-width: 800px) {
+    .hero {
+        flex-direction: row;
+        /* nhỏ hơn 700px thì ảnh nhảy lên trên */
+    }
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Ảnh được cắt/zoom để lấp đầy khung, không bị méo */
+    border: 6px solid #667eea;
+    /* Viền dày 6px màu xanh tím */
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 40px rgba(246, 48, 243, 0.3);
+    /* Đổ bóng xanh hồng nhạt, lệch 15px xuống, lan 40px */
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    /* Khi rê chuột vào: ảnh phóng to 5% */
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+    /* Bóng đổ đậm và rộng hơn khi hover */
+}
+
+.caption_1 {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #000000;
+    max-width: 600px;
+}
+
+/* Video Section */
+.video-section {
+    width: 100%;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e9ecef 0%, #b4daff 100%);
+}
+
+.Introduce {
+    text-align: center;
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.video-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.Introduce_first {
+    font-size: 1.4em;
+    color: #2c3e50;
+    margin: 30px 0;
+    font-weight: 600;
+    /*độ đậm của chữ*/
+}
+
+.caption_2 {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #010101;
+    text-align: justify;
+    /*căn thẳng dòng*/
+    margin-bottom: 40px;
+    text-indent: 3em;
+    /* thụt đầu dòng 2 em bằng 2 kích thước hiện tại*/
+}
+
+.video-container-2 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.video-container-2 video {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    object-fit: cover;
+    /* phần tử hình ảnh (<img>) hoặc video (<video>) để kiểm soát cách hình ảnh/ video lấp đầy khung chứa. */
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.video-container-2 video:hover {
+    transform: translateY(-5px);
+    /* di chuyển bằng transform không làm layout bị thay đổi, các phần tử khác vẫn giữ vị trí. */
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    /* tạo độ bóng */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .gioi_thieu {
+        font-size: 2.5em;
+        padding: 50px 20px 30px;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ten_que {
+        font-size: 2.2em;
+    }
+
+    .video-container {
+        padding: 0 30px;
+    }
+
+    .caption_1,
+    .caption_2 {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-link {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .name {
+        font-size: 1.3em;
+    }
+
+    .gioi_thieu {
+        font-size: 2em;
+        padding: 40px 15px 25px;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .hero,
+    .video-section {
+        padding: 60px 0;
+    }
+
+    .ten_que {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .gioi_thieu_mo_dau {
+        font-size: 1.2em;
+    }
+
+    .caption_1,
+    .caption_2 {
+        font-size: 1em;
+        padding: 0 20px;
+    }
+
+    .video-container {
+        padding: 0 20px;
+    }
+
+    .video-container-2 video {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+
+    .main-content {
+        padding-top: 120px;
+    }
+
+    .gioi_thieu {
+        font-size: 1.6em;
+        padding: 30px 15px 20px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 30px;
+    }
+
+    .hero,
+    .video-section {
+        padding: 40px 0;
+    }
+
+    .ten_que {
+        font-size: 1.5em;
+        margin-bottom: 25px;
+    }
+
+    .gioi_thieu_mo_dau {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+    .caption_1,
+    .caption_2 {
+        font-size: 0.95em;
+        padding: 0 15px;
+        text-align: left;
+    }
+
+    .video-container {
+        padding: 0 15px;
+    }
+
+    .video-container-2 video {
+        height: 250px;
+        border-radius: 15px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    /* tạo cuộn mượt khi kéo lên đầu trang */
+}
+
+/* Additional hover effects */
+.hero:hover .profile-img {
+    transform: scale(1.02);
+    /* Khi rê chuột vào .hero → avatar .profile-img phóng to nhẹ. */
+}
+
+.video-section:hover .video-container-2 video {
+    transform: translateY(-2px);
+    /* Khi rê chuột vào video → video nhấc lên 2px → tạo hiệu ứng nổi bật, sinh động. */
+}
